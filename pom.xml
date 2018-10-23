@@ -7,7 +7,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>first-microservices</name>
+	<name>${project.artifactId}</name>
 	<description>My first microservice project using Spring Boot</description>
 
 	<parent>
@@ -17,11 +17,15 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
+  <modules>
+    <module>users-service</module>
+  </modules>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<spring.cloud.version>Finchley.RC1</spring.cloud.version>
+		<spring.cloud.version>Finchley.RELEASE</spring.cloud.version>
 		<oauth2.version>2.3.3.RELEASE</oauth2.version>
 		<jgitflow.version>1.0-m5.1</jgitflow.version>
 		<h2.version>1.4.197</h2.version>
@@ -45,14 +49,28 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+    <!-- Spring Cloud -->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-dependencies</artifactId>
+      <version>${spring.cloud.version}</version>
+      <type>pom</type>
+      <scope>import</scope>
+    </dependency>
+    <!-- OAuth2 -->
+    <dependency>
+      <groupId>org.springframework.security.oauth</groupId>
+      <artifactId>spring-security-oauth2</artifactId>
+      <version>${oauth2.version}</version>
+    </dependency>
 
 		<!-- DB Portable -->
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<version>${h2.version}</version>
-			<scope>runtime</scope>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>com.h2database</groupId>-->
+			<!--<artifactId>h2</artifactId>-->
+			<!--<version>${h2.version}</version>-->
+			<!--<scope>runtime</scope>-->
+		<!--</dependency>-->
 
 		<!-- DATABASE -->
 		<!-- PostgreSQL Connector -->
@@ -123,6 +141,4 @@
       </plugin>
 		</plugins>
 	</build>
-
-
 </project>
