@@ -1,0 +1,12 @@
+server:
+  context-path: /
+
+spring:
+  application:
+    name: Zuul Server
+  cloud:
+    config:
+      uri: http://localhost:7070
+  fail-fast: true
+    username: first
+    password: first

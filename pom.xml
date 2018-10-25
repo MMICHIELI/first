@@ -19,6 +19,7 @@
 
   <modules>
     <module>users-service</module>
+		<module>zuul-service</module>
   </modules>
 
 	<properties>
