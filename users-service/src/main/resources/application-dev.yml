@@ -11,9 +11,6 @@ spring:
   datasource:
     username: toolalaMicroservice
     password: admin123
-    hikary:
-      connection-timeout: 60000
-      maximum-pool-size: 2
     url: jdbc:postgresql://localhost:5477/userdb
     driver-class-name: org.postgresql.Driver
 
