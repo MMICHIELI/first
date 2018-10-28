@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    active: dev, native
+
+  cloud:
+    config:
+        server:
+          git:
+            uri: https://github.com/MMICHIELI/first
+          native:
+            search-locations: classpath:/config/{profile}
