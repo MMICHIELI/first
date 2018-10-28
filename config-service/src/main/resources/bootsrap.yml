@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: config-service
+
+server:
+    context-path: /
+    port: 7777
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${EUREKA_HOST:localhost}:8761/eureka/
+
+  instance:
+    prefer-ip-address: true
+    StatusPageUrlPath: ${server.context-path}/info
+    healthCheckUrlPath: ${server.context-path}/health
+
+---
+spring:
+  profiles: integration
+
+eureka:
+  instance:
+    hostname: ${vcap.application.uris[0]:localhost}
+    nonSecurePort: 80
+    prefer+ip-addres: false
+  client:
+    service-url:
+      defaultZone: http://${EUREKA_HOST:localhost}:8761/eureka/
+
+---
+spring:
+  profiles: dev
+server:
+  port: 7777
