@@ -3,8 +3,9 @@ spring:
     name: config-service
 
 server:
-    context-path: /
-    port: 7777
+  context-path: /
+  port: 7770
+
 
 eureka:
   client:
@@ -24,7 +25,7 @@ eureka:
   instance:
     hostname: ${vcap.application.uris[0]:localhost}
     nonSecurePort: 80
-    prefer+ip-addres: false
+    prefer-ip-address: false
   client:
     service-url:
       defaultZone: http://${EUREKA_HOST:localhost}:8761/eureka/
@@ -32,5 +33,6 @@ eureka:
 ---
 spring:
   profiles: dev
+
 server:
   port: 7777

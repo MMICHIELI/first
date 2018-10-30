@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: dev, native
+    active: native
 
   cloud:
     config:
@@ -8,4 +8,4 @@ spring:
           git:
             uri: https://github.com/MMICHIELI/first
           native:
-            search-locations: classpath:/config/{profile}
+            search-locations: classpath:/config/${spring.profiles.active}.yml
