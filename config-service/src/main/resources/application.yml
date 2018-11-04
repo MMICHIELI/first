@@ -1,16 +1,11 @@
 spring:
   profiles:
-    active: native
+    active: dev, native
 
   cloud:
     config:
       server:
         git:
           uri: https://github.com/MMICHIELI/first.git
-
-eureka:
-  client:
-    region: default
-    registryFetchIntervalSeconds: 5
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+        native:
+          search-locations: classpath:/config/{profile}²&

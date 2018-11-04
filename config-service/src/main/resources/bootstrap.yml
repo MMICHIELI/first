@@ -8,7 +8,7 @@ server:
 
 eureka:
   instance:
-    prefer-ip-address: true
+    prefer-ip-address: false
     StatusPageUrlPath: ${server.context-path}/info
     healthCheckUrlPath: ${server.context-path}/health
     hostname: localhost
