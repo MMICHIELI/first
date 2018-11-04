@@ -1,0 +1,32 @@
+server:
+  port: 3001
+
+app:
+  name: UsersService
+  description: Users Management Service
+
+spring:
+  profiles:
+    active: integration
+  datasource:
+    username: toolalaMicroservice
+    password: admin123
+    hikary:
+      connection-timeout: 60000
+      maximum-pool-size: 2
+    url: jdbc:postgresql://localhost:5477/userdb
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          lob:
+            non_contextual_creation: true
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
