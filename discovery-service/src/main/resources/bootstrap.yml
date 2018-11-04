@@ -7,7 +7,6 @@ server:
 
 eureka:
   client:
-    region: default
     register-with-eureka: false
     fetch-registry: false
   instance:

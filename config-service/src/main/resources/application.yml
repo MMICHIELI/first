@@ -6,6 +6,6 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/MMICHIELI/first/tree/feature/discovery-service
+          uri: D:\Dev\Workspaces\Apps\MicroServices\first-microservices\config-service\src\main\resources\config
         native:
-          search-locations: classpath:/config/{profile}
+          search-locations: classpath:./config/{profile}
