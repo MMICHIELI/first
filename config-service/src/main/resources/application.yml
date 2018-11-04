@@ -6,6 +6,6 @@ spring:
     config:
       server:
         git:
-          uri: ./config/{profile}
+          uri: https://github.com/MMICHIELI/first/tree/feature/discovery-service
         native:
           search-locations: classpath:/config/{profile}
