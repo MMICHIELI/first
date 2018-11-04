@@ -6,6 +6,6 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/MMICHIELI/first
+          uri: ./config/{profile}
         native:
           search-locations: classpath:/config/{profile}

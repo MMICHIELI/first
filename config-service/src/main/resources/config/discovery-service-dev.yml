@@ -9,3 +9,7 @@ server:
 eureka:
   instance:
     hostname: localhost
+  client:
+    region: default
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka
