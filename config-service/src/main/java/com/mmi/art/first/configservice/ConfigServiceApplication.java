@@ -7,8 +7,8 @@ import org.springframework.cloud.config.server.EnableConfigServer;
 /**
  * Centralize the configuration for microservices
  */
-@EnableConfigServer
 @SpringBootApplication
+@EnableConfigServer
 public class ConfigServiceApplication {
 
 	public static void main(String[] args) {
