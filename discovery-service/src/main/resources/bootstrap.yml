@@ -23,7 +23,7 @@ eureka:
     prefer-ip-address: true
   client:
     service-url:
-      defaultZone: http://${EUREKA_HOST:localost}:8762/eureka/
+      defaultZone: http://${eureka.instance.hostname}:8762/eureka/
       server:
         enable-self-preservation: false
 
@@ -38,6 +38,6 @@ eureka:
     prefer-ip-address: true
   client:
     service-url:
-      defaultZone: http://${EUREKA_HOST:localost}:8761/eureka/
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
       server:
         enable-self-preservation: false

@@ -3,19 +3,17 @@ spring:
     name: config-service
 
 server:
-  context-path: /
   port: 7770
-
 
 eureka:
   client:
     service-url:
-      defaultZone: http://${EUREKA_HOST:localhost}:8761/eureka/
-
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
   instance:
     prefer-ip-address: true
-    StatusPageUrlPath: ${server.context-path}/info
-    healthCheckUrlPath: ${server.context-path}/health
+    StatusPageUrlPath: //info
+    healthCheckUrlPath: //health
+    hostname: localhost
 
 ---
 spring:
@@ -28,7 +26,7 @@ eureka:
     prefer-ip-address: false
   client:
     service-url:
-      defaultZone: http://${EUREKA_HOST:localhost}:8761/eureka/
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
 
 ---
 spring:

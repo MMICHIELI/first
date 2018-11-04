@@ -4,8 +4,8 @@ spring:
 
   cloud:
     config:
-        server:
-          git:
-            uri: https://github.com/MMICHIELI/first
-          native:
-            search-locations: classpath:/config/${spring.profiles.active}.yml
+      server:
+        git:
+          uri: https://github.com/MMICHIELI/first
+        native:
+          search-locations: classpath:/config/{profile}

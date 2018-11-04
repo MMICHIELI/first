@@ -1,2 +1,11 @@
+spring:
+  cloud:
+    application:
+      name: discovery-service
+
 server:
   port: 8761
+
+eureka:
+  instance:
+    hostname: localhost
