@@ -6,15 +6,15 @@ server:
   context-path: /
 
 eureka:
-  instance:
-    prefer-ip-address: false%
-    StatusPageUrlPath: ${server.context-path}/info
-    healthCheckUrlPath: ${server.context-path}/health
-    hostname: localhost
-
   client:
     service-url:
       defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+
+  instance:
+    hostname: localhost
+    prefer-ip-address: false
+    StatusPageUrlPath: ${server.context-path}/info
+    healthCheckUrlPath: ${server.context-path}/health
 
 ---
 spring:
