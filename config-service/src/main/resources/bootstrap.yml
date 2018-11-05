@@ -4,11 +4,10 @@ spring:
 
 server:
   context-path: /
-  port: 7770
 
 eureka:
   instance:
-    prefer-ip-address: false
+    prefer-ip-address: false%
     StatusPageUrlPath: ${server.context-path}/info
     healthCheckUrlPath: ${server.context-path}/health
     hostname: localhost
