@@ -3,18 +3,21 @@ spring:
     name: config-service
 
 server:
-  context-path: /
+  servlet:
+    context-path: /
 
 eureka:
   client:
     service-url:
-      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+      defaultZone: http://${EUREKA_HOST:localhost}:8761/eureka/
+    region: default
+    registry-fetch-interval-seconds: 5
+
 
   instance:
-    hostname: localhost
     prefer-ip-address: false
-    StatusPageUrlPath: ${server.context-path}/info
-    healthCheckUrlPath: ${server.context-path}/health
+    StatusPageUrlPath: ${server.servlet.context-path}/info
+    healthCheckUrlPath: ${server.servlet.context-path}/health
 
 ---
 spring:
@@ -27,7 +30,7 @@ eureka:
     prefer-ip-address: false
   client:
     service-url:
-      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+      defaultZone: http://${EUREKA_HOST:localhost}:8761/eureka/
 
 ---
 spring:

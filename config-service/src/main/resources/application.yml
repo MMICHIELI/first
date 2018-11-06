@@ -5,7 +5,5 @@ spring:
   cloud:
     config:
       server:
-        git:
-          uri: https://github.com/MMICHIELI/first.git
         native:
           search-locations: classpath:/config/{profile}

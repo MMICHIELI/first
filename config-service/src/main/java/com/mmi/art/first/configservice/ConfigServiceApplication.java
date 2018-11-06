@@ -6,7 +6,9 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.config.server.EnableConfigServer;
 
 /**
- * Centralize the configuration for microservices
+ * Centralize the configuration for First Microservices
+ * @link @EnableConfigServer turns this application as a ConfigurationServer
+ * @link @EnableDiscoveryClient allows this app to register with Eureka
  */
 @SpringBootApplication
 @EnableConfigServer

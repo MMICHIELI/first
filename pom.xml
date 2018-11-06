@@ -29,7 +29,8 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<spring-cloud.version>Finchley.SR2</spring-cloud.version>
-		<oauth2.version>2.3.3.RELEASE</oauth2.version>
+		<cloud.starter.version>1.4.6.RELEASE</cloud.starter.version>
+		<oauth2.version>2.3.4.RELEASE</oauth2.version>
 		<jgitflow.version>1.0-m5.1</jgitflow.version>
 		<h2.version>1.4.197</h2.version>
 		<postgresql.version>42.2.5</postgresql.version>
