@@ -13,7 +13,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.6.RELEASE</version>
+		<version>2.1.0.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -28,8 +28,9 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<spring-cloud.version>Finchley.SR2</spring-cloud.version>
-		<oauth2.version>2.3.3.RELEASE</oauth2.version>
+		<spring-cloud.version>Greenwich.M1</spring-cloud.version>
+		<zuul-starter.version>2.0.0.M2</zuul-starter.version>
+		<oauth2.version>2.3.4.RELEASE</oauth2.version>
 		<jgitflow.version>1.0-m5.1</jgitflow.version>
 		<h2.version>1.4.197</h2.version>
 		<postgresql.version>42.2.5</postgresql.version>
@@ -46,19 +47,16 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-    <!-- OAuth2 -->
-    <dependency>
-      <groupId>org.springframework.security.oauth</groupId>
-      <artifactId>spring-security-oauth2</artifactId>
-      <version>${oauth2.version}</version>
-    </dependency>
+
+		<!-- OAuth2 -->
+    <!--<dependency>-->
+      <!--<groupId>org.springframework.security.oauth</groupId>-->
+      <!--<artifactId>spring-security-oauth2</artifactId>-->
+      <!--<version>${oauth2.version}</version>-->
+    <!--</dependency>-->
 
 		<!-- DB Portable -->
 		<dependency>
@@ -102,6 +100,19 @@
 		</dependency>
 	</dependencies>
 
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -141,4 +152,17 @@
       </plugin>
 		</plugins>
 	</build>
+
+	<repositories>
+		<repository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/milestone</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+
 </project>

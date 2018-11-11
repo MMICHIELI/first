@@ -2,20 +2,32 @@ spring:
   application:
     name: config-service
 
-server:
-  context-path: /
-  port: 7770
+  profiles:
+    active: native
+
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/config/{profile}
+
+
+#server:
+#  servlet:
+#    context-path: /
 
 eureka:
-  instance:
-    prefer-ip-address: true
-    StatusPageUrlPath: ${server.context-path}/info
-    healthCheckUrlPath: ${server.context-path}/health
-    hostname: localhost
-
   client:
-    service-url:
-      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+    region: default
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+    registry-fetch-interval-seconds: 10
+
+
+#  instance:
+#    prefer-ip-address: false
+#    StatusPageUrlPath: ${server.servlet.context-path}/info
+#    healthCheckUrlPath: ${server.servlet.context-path}/health
 
 ---
 spring:
@@ -27,12 +39,12 @@ eureka:
     nonSecurePort: 80
     prefer-ip-address: false
   client:
-    service-url:
-      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+    serviceUrl:
+      defaultZone: http://${EUREKA_HOST:localhost}:8761/eureka
 
 ---
 spring:
   profiles: dev
 
 server:
-  port: 7777
+  port: 8087

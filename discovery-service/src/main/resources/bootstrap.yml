@@ -1,10 +1,8 @@
 spring:
-  application:
-    name: discovery-service
   cloud:
     config:
       name: discovery-service
-      uri: http://localhost:7777
+      uri: http://localhost:8087
 
 server:
   port: 8761
@@ -14,7 +12,7 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
   instance:
-    lease-renewal-interval-in-seconds: 10
+    lease-renewal-interval-in-seconds: 5
 
 ---
 spring:
@@ -27,7 +25,7 @@ eureka:
     prefer-ip-address: true
   client:
     service-url:
-      defaultZone: http://${eureka.instance.hostname}:8762/eureka/
+      defaultZone: http://${EUREKA_HOST:localhost}:8762/eureka
       server:
         enable-self-preservation: false
 
@@ -42,6 +40,6 @@ eureka:
     prefer-ip-address: true
   client:
     service-url:
-      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+      defaultZone: http://${EUREKA_HOST:localhost}:8761/eureka
       server:
         enable-self-preservation: false
