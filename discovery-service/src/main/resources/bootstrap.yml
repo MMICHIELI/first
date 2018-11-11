@@ -2,7 +2,6 @@ spring:
   cloud:
     config:
       name: discovery-service
-      uri: http://localhost:7777
 
 server:
   port: 8761

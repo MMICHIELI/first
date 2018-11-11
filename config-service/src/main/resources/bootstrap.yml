@@ -2,15 +2,6 @@ spring:
   application:
     name: config-service
 
-#  profiles:
-#    active: native
-#
-#  cloud:
-#    config:
-#      server:
-#        native:
-#          search-locations: classpath:/config/{profile}
-
 server:
   servlet:
     context-path: /
@@ -45,4 +36,4 @@ spring:
   profiles: dev
 
 server:
-  port: 8087
+  port: 7777
