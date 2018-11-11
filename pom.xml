@@ -139,6 +139,7 @@
           <pushHotfixes>true</pushHotfixes>
           <pushReleases>true</pushReleases>
           <enableSshAgent>true</enableSshAgent>
+					<allowUntracked>true</allowUntracked>
           <noDeploy>true</noDeploy>
           <flowInitContext>
             <masterBranchName>master</masterBranchName>

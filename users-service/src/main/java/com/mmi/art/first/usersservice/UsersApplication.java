@@ -1,4 +1,4 @@
-package com.mmi.art.first;
+package com.mmi.art.first.usersservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

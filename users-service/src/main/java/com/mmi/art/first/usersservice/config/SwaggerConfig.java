@@ -1,4 +1,4 @@
-package com.mmi.art.first.config;
+package com.mmi.art.first.usersservice.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,7 +16,7 @@ public class SwaggerConfig {
   public Docket api() {
     return new Docket(DocumentationType.SWAGGER_2)
         .select()
-        .apis(RequestHandlerSelectors.basePackage("com.mmi.art.first.rest.controller"))
+        .apis(RequestHandlerSelectors.basePackage("com.mmi.art.first.usersservice.rest.controller"))
         .paths(PathSelectors.any())
         .build();
   }

@@ -1,4 +1,4 @@
-package com.mmi.art.first.service.dto;
+package com.mmi.art.first.usersservice.service.dto;
 
 import lombok.Data;
 

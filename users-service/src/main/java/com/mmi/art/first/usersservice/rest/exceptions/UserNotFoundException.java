@@ -1,4 +1,4 @@
-package com.mmi.art.first.rest.exceptions;
+package com.mmi.art.first.usersservice.rest.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
