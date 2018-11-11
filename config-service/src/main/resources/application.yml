@@ -1,12 +1,10 @@
-spring:
-  profiles:
-    active: native
-
-  cloud:
-    config:
-      server:
-        native:
-          search-locations: classpath:/config/{profile}
+#spring:
+#
+#  cloud:
+#    config:
+#      server:
+#        native:
+#          search-locations: classpath:/config/{profile}
 
 #eureka:
 #  client:

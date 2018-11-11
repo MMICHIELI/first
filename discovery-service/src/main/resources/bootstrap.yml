@@ -2,7 +2,7 @@ spring:
   cloud:
     config:
       name: discovery-service
-      uri: http://localhost:7777
+      uri: http://localhost:8087
 
 server:
   port: 8761
@@ -25,7 +25,7 @@ eureka:
     prefer-ip-address: true
   client:
     service-url:
-      defaultZone: http://${EUREKA_HOST:localhost}:8762/eureka/
+      defaultZone: http://${EUREKA_HOST:localhost}:8762/eureka
       server:
         enable-self-preservation: false
 
@@ -40,6 +40,6 @@ eureka:
     prefer-ip-address: true
   client:
     service-url:
-      defaultZone: http://${EUREKA_HOST:localhost}:8761/eureka/
+      defaultZone: http://${EUREKA_HOST:localhost}:8761/eureka
       server:
         enable-self-preservation: false
