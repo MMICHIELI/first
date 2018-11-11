@@ -2,12 +2,19 @@ spring:
   cloud:
     config:
       name: zuul-gateway
-      uri: http://localhost:7777
+      uri: http://${EUREKA_HOST:localhost}:7777
 
 server:
   port: 7070
+  servlet:
+    context-path: /
 
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://${EUREKA_HOST:localhost}:8761/eureka
+  instance:
+    prefer-ip-address: true
+    StatusPageUrlPath: ${server.servlet.context-path}/info
+    healthCheckUrlPath: ${server.servlet.context-path}/health
+
