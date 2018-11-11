@@ -1,18 +1,12 @@
 spring:
-  profiles: dev
   application:
     name: zuul-gateway
-
-  cloud:
-    config:
-      uri: http://localhost:7777
 
 #  fail-fast: true
 #    username: first
 #    password: first
 
 server:
-  context-path: /
   port: 7070
 
 eureka:

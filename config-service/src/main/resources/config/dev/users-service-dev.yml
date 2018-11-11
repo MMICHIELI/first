@@ -1,13 +1,10 @@
 server:
   port: 3001
 
-app:
-  name: UsersService
-  description: Users Management Service
-
 spring:
-  profiles:
-    active: dev
+  application:
+    name: users-service
+
   datasource:
     username: toolalaMicroservice
     password: admin123

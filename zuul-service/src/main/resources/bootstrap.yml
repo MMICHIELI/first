@@ -4,9 +4,8 @@ spring:
       name: zuul-gateway
       uri: http://localhost:7777
 
-      discovery:
-        service-id: config-service
-        enabled: true
+server:
+  port: 7070
 
 eureka:
   client:
