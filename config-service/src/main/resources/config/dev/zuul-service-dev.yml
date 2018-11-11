@@ -1,12 +1,40 @@
-server:
-  context-path: /
-
 spring:
   application:
-    name: Zuul Server
-  cloud:
-    config:
-      uri: http://localhost:7070
-  fail-fast: true
-    username: first
-    password: first
+    name: zuul-gateway
+
+#  fail-fast: true
+#    username: first
+#    password: first
+
+server:
+  port: 7070
+
+eureka:
+  client:
+    region: default
+    registry-fetch-interval-seconds: 10
+
+zuul:
+  routes:
+    discovery:
+      path: /discovery-service/**
+      sensitive-headers: Set-Cookie,Authorization
+      url: http://localhost:8761
+    users-service:
+      path: /users-service/**
+      url: http://localhost:3001
+
+
+hystrix:
+  command:
+    discovery:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+    users-service:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+

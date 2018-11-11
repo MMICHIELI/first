@@ -1,4 +1,4 @@
-package com.mmi.art.first.model.entity;
+package com.mmi.art.first.usersservice.model.entity;
 
 import lombok.Data;
 

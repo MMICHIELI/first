@@ -1,9 +1,9 @@
-package com.mmi.art.first.rest.controller;
+package com.mmi.art.first.usersservice.rest.controller;
 
-import com.mmi.art.first.service.IUserService;
-import com.mmi.art.first.service.dto.UserDto;
-import com.mmi.art.first.rest.exceptions.NoUserException;
-import com.mmi.art.first.rest.exceptions.UserNotFoundException;
+import com.mmi.art.first.usersservice.service.IUserService;
+import com.mmi.art.first.usersservice.service.dto.UserDto;
+import com.mmi.art.first.usersservice.rest.exceptions.NoUserException;
+import com.mmi.art.first.usersservice.rest.exceptions.UserNotFoundException;
 
 
 import io.swagger.annotations.Api;

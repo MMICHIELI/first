@@ -1,6 +1,6 @@
-package com.mmi.art.first.model.dao;
+package com.mmi.art.first.usersservice.model.dao;
 
-import com.mmi.art.first.model.entity.User;
+import com.mmi.art.first.usersservice.model.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

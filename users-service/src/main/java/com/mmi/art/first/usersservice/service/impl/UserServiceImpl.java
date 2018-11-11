@@ -1,10 +1,10 @@
-package com.mmi.art.first.service.impl;
+package com.mmi.art.first.usersservice.service.impl;
 
-import com.mmi.art.first.service.IUserService;
-import com.mmi.art.first.service.dto.UserDto;
-import com.mmi.art.first.service.mapping.UserMappingService;
-import com.mmi.art.first.model.dao.IUserDao;
-import com.mmi.art.first.model.entity.User;
+import com.mmi.art.first.usersservice.service.IUserService;
+import com.mmi.art.first.usersservice.service.dto.UserDto;
+import com.mmi.art.first.usersservice.service.mapping.UserMappingService;
+import com.mmi.art.first.usersservice.model.dao.IUserDao;
+import com.mmi.art.first.usersservice.model.entity.User;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
