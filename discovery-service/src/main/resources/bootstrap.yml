@@ -2,7 +2,7 @@ spring:
   cloud:
     config:
       name: discovery-service
-      uri: http://localhost:8087
+      uri: http://localhost:7777
 
 server:
   port: 8761
@@ -12,7 +12,7 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
   instance:
-    lease-renewal-interval-in-seconds: 5
+    lease-renewal-interval-in-seconds: 10
 
 ---
 spring:
