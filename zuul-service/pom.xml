@@ -7,7 +7,7 @@
 	<packaging>jar</packaging>
 
 	<name>${project.artifactId}</name>
-	<description>Zuul Proxy Service</description>
+	<description>Zuul Proxy - Gateway Service</description>
 
 	<parent>
 		<groupId>com.mmi.art.first</groupId>
@@ -24,21 +24,17 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-zuul</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
 	</dependencies>
-
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>${spring-cloud.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
 
 	<build>
 		<plugins>
@@ -48,4 +44,6 @@
 			</plugin>
 		</plugins>
 	</build>
+
+
 </project>
