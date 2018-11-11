@@ -1,7 +1,7 @@
-package com.mmi.art.first.service.mapping;
+package com.mmi.art.first.usersservice.service.mapping;
 
-import com.mmi.art.first.service.dto.UserDto;
-import com.mmi.art.first.model.entity.User;
+import com.mmi.art.first.usersservice.service.dto.UserDto;
+import com.mmi.art.first.usersservice.model.entity.User;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
