@@ -1,0 +1,13 @@
+server:
+  port: 3001
+
+spring:
+  cloud:
+    config:
+      name: users-service
+      uri: http://localhost:7777
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka

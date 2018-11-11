@@ -1,4 +1,4 @@
-package com.mmi.art.first;
+package com.mmi.art.first.usersservice;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

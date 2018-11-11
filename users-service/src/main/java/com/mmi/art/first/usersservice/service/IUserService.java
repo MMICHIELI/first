@@ -1,6 +1,6 @@
-package com.mmi.art.first.service;
+package com.mmi.art.first.usersservice.service;
 
-import com.mmi.art.first.service.dto.UserDto;
+import com.mmi.art.first.usersservice.service.dto.UserDto;
 
 import java.util.List;
 
