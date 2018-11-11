@@ -138,7 +138,6 @@
           <pushFeatures>true</pushFeatures>
           <pushHotfixes>true</pushHotfixes>
           <pushReleases>true</pushReleases>
-					<allowUntracked>true</allowUntracked>
           <enableSshAgent>true</enableSshAgent>
 					<allowUntracked>true</allowUntracked>
           <noDeploy>true</noDeploy>
