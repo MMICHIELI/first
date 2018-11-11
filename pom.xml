@@ -138,6 +138,7 @@
           <pushFeatures>true</pushFeatures>
           <pushHotfixes>true</pushHotfixes>
           <pushReleases>true</pushReleases>
+					<allowUntracked>true</allowUntracked>
           <enableSshAgent>true</enableSshAgent>
           <noDeploy>true</noDeploy>
           <flowInitContext>
