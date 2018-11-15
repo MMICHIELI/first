@@ -1,12 +1,11 @@
 
 server:
-  port: 7070
   servlet:
     context-path: /
 
 spring:
   application:
-    name: zuul-gateway
+    name: zuul-service
   cloud:
     config:
       uri: http://${EUREKA_HOST:localhost}:7777

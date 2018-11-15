@@ -4,27 +4,39 @@ server:
 
 spring:
   application:
-    name: zuul-gateway
+    name: zuul-service
 
 zuul:
+  ignored-services: '*'
   sensitive-headers: Cookie,Set-Cookie,Authorization
   retryable: true
   routes:
     users-service:
       path: /api/users-service/**
-      service-id: users-service
-      strip-prefix: true
+      serviceId: users-service
+      stripPrefix: true
 
 security:
   # disable spring boot basic authentication
   basic:
     enable: false
-  ignored: /users/activator, /uaa, /health, /info
+  ignored: /health, /info
 
 logging:
-  level: org.springframework.security: DEBUG
+  level.org.springframework.security: DEBUG
 
 ribbon:
-  connectTimeout: 20000
-  readTimeout: 20000
+  ConnectTimeout: 20000
+  ReadTimeout: 20000
+
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: true
+        isolation:
+          strategy: THREAD
+          thread:
+            timeoutInMilliseconds: 40000
 
