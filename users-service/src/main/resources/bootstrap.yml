@@ -2,12 +2,13 @@ server:
   port: 3001
 
 spring:
+  application:
+    name: users-service
   cloud:
     config:
-      name: users-service
       uri: http://localhost:7777
 
 eureka:
   client:
-    serviceUrl:
+    service-url:
       defaultZone: http://localhost:8761/eureka

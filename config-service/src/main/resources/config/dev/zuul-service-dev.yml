@@ -1,41 +1,42 @@
-spring:
-  application:
-    name: zuul-gateway
-
-#  fail-fast: true
-#    username: first
-#    password: first
-
 server:
   port: 7070
+  context-path: /
 
-eureka:
-  client:
-    region: default
-    registry-fetch-interval-seconds: 10
+spring:
+  application:
+    name: zuul-service
 
 zuul:
+  ignored-services: '*'
+  sensitive-headers: Cookie,Set-Cookie,Authorization
+  retryable: true
   routes:
-    discovery:
-      path: /discovery-service/**
-      sensitive-headers: Set-Cookie,Authorization
-      url: http://localhost:8761
     users-service:
-      path: /users-service/**
-      sensitive-headers: Set-Cookie,Authorization
-      url: http://localhost:3001
+      path: /api/users-service/**
+      serviceId: users-service
+      stripPrefix: true
 
+security:
+  # disable spring boot basic authentication
+  basic:
+    enable: false
+  ignored: /health, /info
+
+logging:
+  level.org.springframework.security: DEBUG
+
+ribbon:
+  ConnectTimeout: 20000
+  ReadTimeout: 20000
 
 hystrix:
   command:
-    discovery:
+    default:
       execution:
+        timeout:
+          enabled: true
         isolation:
+          strategy: THREAD
           thread:
-            timeoutInMilliseconds: 60000
-    users-service:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 60000
+            timeoutInMilliseconds: 40000
 

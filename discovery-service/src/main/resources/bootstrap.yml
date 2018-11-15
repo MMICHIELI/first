@@ -4,9 +4,6 @@ spring:
       name: discovery-service
       uri: http://${EUREKA_HOST:localhost}:7777
 
-server:
-  port: 8761
-
 eureka:
   client:
     register-with-eureka: false
