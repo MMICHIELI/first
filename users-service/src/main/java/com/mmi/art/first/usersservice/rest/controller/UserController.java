@@ -37,8 +37,8 @@ public class UserController {
   public ResponseEntity<Iterable<UserDto>> list() throws NoUserException {
     LOGGER.info("USER [CONTROLLER] - GET All Users ");
 
-    List<UserDto> userDtos = userService.list();
-    if (userDtos == null || userDtos.isEmpty())
+    Iterable<UserDto> userDtos = userService.list();
+    if (userDtos == null)
       throw new NoUserException("Il n'y a Aucun utilisateur.");
     else
       return new ResponseEntity<>(userDtos, OK);
