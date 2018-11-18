@@ -32,7 +32,6 @@
 		<zuul-starter.version>2.0.0.M2</zuul-starter.version>
 		<oauth2.version>2.3.4.RELEASE</oauth2.version>
 		<jgitflow.version>1.0-m5.1</jgitflow.version>
-		<h2.version>1.4.197</h2.version>
 		<postgresql.version>42.2.5</postgresql.version>
 		<lombok.version>1.18.2</lombok.version>
 		<swagger.version>2.8.0</swagger.version>
@@ -41,6 +40,10 @@
 
 	<dependencies>
 		<!-- SPRING -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -57,14 +60,6 @@
       <!--<artifactId>spring-security-oauth2</artifactId>-->
       <!--<version>${oauth2.version}</version>-->
     <!--</dependency>-->
-
-		<!-- DB Portable -->
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<version>${h2.version}</version>
-			<scope>runtime</scope>
-		</dependency>
 
 		<!-- DATABASE -->
 		<!-- PostgreSQL Connector -->

@@ -19,8 +19,6 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-    <lombok.version>1.18.2</lombok.version>
-    <swagger.version>2.8.0</swagger.version>
 	</properties>
 
 	<dependencies>
@@ -31,25 +29,18 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+			<artifactId>spring-cloud-config-client</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
 
-    <!-- SWAGGER -->
-    <!--<dependency>-->
-      <!--<groupId>io.springfox</groupId>-->
-      <!--<artifactId>springfox-swagger2</artifactId>-->
-			<!--<version>${swagger.version}</version>-->
-    <!--</dependency>-->
-
-    <!--<dependency>-->
-      <!--<groupId>io.springfox</groupId>-->
-      <!--<artifactId>springfox-swagger-ui</artifactId>-->
-			<!--<version>${swagger.version}</version>-->
-    <!--</dependency>-->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>${h2.version}</version>
+		</dependency>
 
 	</dependencies>
 
@@ -62,24 +53,5 @@
 		</plugins>
 	</build>
 
-	<profiles>
-		<profile>
-			<id>dev</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
-			<properties>
-				<env>dev</env>
-			</properties>
-		</profile>
-		<profile>
-			<id>integration</id>
-			<activation>
-				<activeByDefault>false</activeByDefault>
-			</activation>
-			<properties>
-				<env>integration</env>
-			</properties>
-		</profile>
-	</profiles>
+
 </project>
