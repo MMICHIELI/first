@@ -1,18 +1,16 @@
-server:
-  port: 3001
-
 spring:
   application:
     name: users-service
 
   datasource:
+    url: jdbc:postgresql://localhost:5477/userdb
     username: toolalaMicroservice
     password: admin123
-    url: jdbc:postgresql://localhost:5477/userdb
     driver-class-name: org.postgresql.Driver
-
+    testWhileIdle: true
+    validationQuery: SELECT 1 FROM DUAL
   jpa:
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    database-platform: org.hibernate.dialect.PostgreSQL94Dialect
     show-sql: true
     properties:
       hibernate:
@@ -21,6 +19,9 @@ spring:
           lob:
             non_contextual_creation: true
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+server:
+  port: 3001
