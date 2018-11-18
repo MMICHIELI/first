@@ -1,6 +1,7 @@
 package com.mmi.art.first.usersservice.rest.controller;
 
 import com.mmi.art.first.usersservice.service.IUserService;
+import com.mmi.art.first.usersservice.service.dto.GenericResponseDto;
 import com.mmi.art.first.usersservice.service.dto.UserDto;
 import com.mmi.art.first.usersservice.rest.exceptions.NoUserException;
 import com.mmi.art.first.usersservice.rest.exceptions.UserNotFoundException;
@@ -16,10 +17,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.List;
 
-import static org.springframework.http.HttpStatus.CREATED;
-import static org.springframework.http.HttpStatus.OK;
+import static org.springframework.http.HttpStatus.*;
 
 @RestController
 @RequestMapping(value = "/users")
@@ -34,14 +35,30 @@ public class UserController {
 
   @GetMapping
   @ApiOperation(value = "List All Users", response = Iterable.class, responseContainer = "ResponseEntity")
-  public ResponseEntity<Iterable<UserDto>> list() throws NoUserException {
+  public ResponseEntity<GenericResponseDto<Iterable<UserDto>>> list() throws NoUserException {
     LOGGER.info("USER [CONTROLLER] - GET All Users ");
 
-    Iterable<UserDto> userDtos = userService.list();
-    if (userDtos == null)
-      throw new NoUserException("Il n'y a Aucun utilisateur.");
+    GenericResponseDto<Iterable<UserDto>> responseDto = new GenericResponseDto();
+
+    ResponseEntity responseEntity;
+    try {
+      responseDto.setCode("200");
+      responseDto.setLabel("OK");
+      responseDto.setResponseData(userService.list());
+    } catch (Exception e) {
+      e.printStackTrace();
+      responseDto.setCode("400");
+      responseDto.setLabel("KO");
+    }
+    responseEntity = new ResponseEntity(responseDto, NOT_FOUND);
+    if (((ArrayList) responseDto.getResponseData()).size() == 0) {
+      responseDto.setCode("404");
+      responseDto.setLabel("Il n'y a Aucun utilisateur.");
+    }
     else
-      return new ResponseEntity<>(userDtos, OK);
+      responseEntity = new ResponseEntity<>(responseDto, OK);
+
+    return responseEntity;
   }
 
   @GetMapping(value = "/{id}")
