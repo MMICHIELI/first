@@ -1,0 +1,11 @@
+
+# node_modules #
+node_modules
+
+# dist #
+dist
+
+# Logs #
+*.log
+npm_debug.log
+package-lock.json
