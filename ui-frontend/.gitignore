@@ -1,0 +1,17 @@
+
+# node_modules #
+node_modules
+
+# cache-loader #
+.cache-loader
+
+# vscode #
+.vscode
+
+# dist #
+dist
+
+# Logs #
+*.log
+npm_debug.log
+package-lock.json
