@@ -1,4 +1,6 @@
 spring:
+  banner:
+    location: classpath:/config/mmibanner.txt
   profiles:
     active: native
 
