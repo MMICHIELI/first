@@ -1,14 +1,14 @@
 {
   "name": "ui-frontend",
   "version": "0.1.0",
-  "description": "Front-End UI used to develop the render of First microservices",
+  "description": "Front-End UI used to develop the render of First microservices.",
   "main": "index.js",
   "scripts": {
-    "clean": "echo \"CLEAN: in development\"",
-    "start": "echo \"START: in development\"",
-    "build": "echo \"BUILD: in development\"",
-    "build-prod": "echo \"PROD: in development\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rimraf .cache-loader *dist",
+    "start": "webpack-dev-server --config=webpack/dev.js --open",
+    "build": "npm run clean && env-cmd ./env/.dev.env webpack -p --progress --config=webpack/prod.js --bail",
+    "build-prod": "npm run clean && env-cmd ./env/.prod.env webpack -p --progress --config=webpack/prod.js --bail",
+    "test": "jest --coverage"
   },
   "keywords": [
     "REACT",
@@ -24,16 +24,28 @@
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
+    "react-hot-loader": "^4.3.12",
     "react-redux": "^5.1.1",
     "react-responsive": "^6.0.1",
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.1",
-    "redux-actions": "^2.6.4"
+    "redux-actions": "^2.6.4",
+    "redux-devtools-extension": "^2.13.5",
+    "styled-components": "^4.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.1.6",
     "@babel/preset-env": "^7.1.6",
     "@babel/preset-react": "^7.0.0",
+    "@types/enzyme": "^3.1.15",
+    "@types/jest": "^23.3.9",
+    "@types/lodash": "^4.14.118",
+    "@types/react": "^16.7.7",
+    "@types/react-dom": "^16.0.10",
+    "@types/react-redux": "^6.0.10",
+    "@types/react-responsive": "^3.0.2",
+    "@types/react-router-dom": "^4.3.1",
+    "@types/redux-actions": "^2.3.1",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
@@ -73,9 +85,28 @@
     "typescript": "^3.1.6",
     "uglifyjs-webpack-plugin": "^2.0.1",
     "webpack": "^4.26.0",
+    "webpack-cli": "^3.1.2",
     "webpack-dev-middleware": "^3.4.0",
     "webpack-dev-server": "^3.1.10",
     "webpack-merge": "^4.1.4",
     "webpack-pwa-manifest": "^3.7.1"
+  },
+  "jest": {
+    "setupFiles": [
+      "<rootDir>/src/setupTests.js"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest",
+      "^.+\\.(js|jsx)$": "babel-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(ts|tsx|js)?$"
   }
 }

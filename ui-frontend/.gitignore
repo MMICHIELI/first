@@ -2,6 +2,12 @@
 # node_modules #
 node_modules
 
+# cache-loader #
+.cache-loader
+
+# vscode #
+.vscode
+
 # dist #
 dist
 
